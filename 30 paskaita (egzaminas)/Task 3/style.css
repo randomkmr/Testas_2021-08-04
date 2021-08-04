@@ -58,4 +58,21 @@
   padding: 30px;
   border-radius: 5px;
   background-color: #fff;
+  padding-left: 10rem;
+}
+
+.userImg {
+  width: 15rem;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+
+#userLogin {
+  font-size: large;
+  color: blue;
+}
+
+hr {
+  width: 25rem;
+  margin: 0 0 1rem 0;
 }
