@@ -10,3 +10,36 @@ bent minimalų stilių;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'cars.json';
+
+function fetchData() {
+    fetch(ENDPOINT)
+        .then(response => response.json())
+        .then(data => getCars(data));
+}
+
+function getCars(data) {
+    const cars = data;
+    console.log(cars)
+    cars.forEach(e => {
+        createCarCard(e.brand, e.models)
+    });
+
+}
+
+function createCarCard(brand, models) {
+    const brandDiv = document.createElement('div');
+    const h2 = document.createElement('h2');
+    brandDiv.setAttribute('id', 'brandId')
+    h2.innerText = brand;
+    document.getElementById('output').append(brandDiv);
+    brandDiv.append(h2);
+    models.forEach(j => {
+        const modelDiv = document.createElement('p');
+        modelDiv.setAttribute('id', 'modelId')
+        modelDiv.innerText = j;
+        brandDiv.append(modelDiv);
+    })
+
+};
+
+fetchData();

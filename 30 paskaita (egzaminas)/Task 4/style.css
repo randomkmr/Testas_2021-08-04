@@ -27,3 +27,31 @@
   margin-top: 50px;
   color: #333;
 }
+
+#output {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+#brandId {
+  color: blue;
+  border: 1px solid;
+  width: 200px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  background-color: gold;
+  padding-left: 1rem;
+  border-radius: 1rem;
+}
+
+#brandId:hover {
+  background-color: darkgoldenrod;
+  color: white;
+  transition-duration: 0.5s
+}
+
+#modelId {
+  color: green;
+  font-size: small;
+}

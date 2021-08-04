@@ -11,3 +11,26 @@ Pastaba: Informacija apie user'į (jo kortelė) bei turi turėti bent minimalų 
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'https://api.github.com/users';
+
+function fetchData() {
+  fetch(ENDPOINT)
+    .then(response => response.json())
+    .then(data => getUsers(data));
+}
+
+function getUsers(data) {
+  const users = data;
+  users.forEach(e => {
+    const userImg = document.createElement('img'); //idejau paveiksliuka vieotj avataro url
+    const p = document.createElement('p');
+    const hr = document.createElement('hr');
+    userImg.src = e.avatar_url;
+    userImg.setAttribute('class', 'userImg');
+    userImg.alt = e.login;
+    p.innerText = e.login;
+    p.setAttribute('id', 'userLogin');
+    document.getElementById('output').append(userImg, p, hr);
+
+  });
+  document.getElementById('message').innerText = `Total number of users: ${users.length}`;
+}
