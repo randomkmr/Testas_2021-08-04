@@ -15,7 +15,8 @@ const ENDPOINT = 'https://api.github.com/users';
 function fetchData() {
   fetch(ENDPOINT)
     .then(response => response.json())
-    .then(data => getUsers(data));
+    .then(data => getUsers(data))
+    .catch(err => console.log(err))
 }
 
 function getUsers(data) {

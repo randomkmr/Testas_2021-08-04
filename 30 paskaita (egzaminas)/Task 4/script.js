@@ -14,12 +14,12 @@ const ENDPOINT = 'cars.json';
 function fetchData() {
     fetch(ENDPOINT)
         .then(response => response.json())
-        .then(data => getCars(data));
+        .then(data => getCars(data))
+        .catch(err => console.log(err))
 }
 
 function getCars(data) {
     const cars = data;
-    console.log(cars)
     cars.forEach(e => {
         createCarCard(e.brand, e.models)
     });
